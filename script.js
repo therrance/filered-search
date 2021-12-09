@@ -1,3 +1,12 @@
+let typingTimer;
+let typeInterval = 500 // Half a second
+let searchInput = document.getElementById('searchbox');
+
+searchInput.addEventListener('keyup', () => {
+  clearTimeout(typingTimer);
+  typingTimer = setTimeout(liveSearch, typeInterval);
+});
+
 function liveSearch() {
   // Locate the card elements
   let cards = document.querySelectorAll('.cards')
